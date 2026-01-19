@@ -1,0 +1,5 @@
+log/
+install/
+build/
+src/hanoi_tower/hanoi_tower/__pycache__
+resources/

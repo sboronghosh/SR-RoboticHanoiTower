@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot name="camera_stand">
+
+  <link name="camera_base_link">
+    <visual>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.02"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="camera_body_link">
+    <visual>
+      <geometry>
+        <box size="0.025 0.09 0.025"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_body" type="fixed">
+    <parent link="camera_base_link"/>
+    <child link="camera_body_link"/>
+    <origin xyz="-0.16 0 0.23" rpy="0 0.45 3.14159"/>
+  </joint>
+
+  <link name="camera_color_optical_frame"/>
+
+  <joint name="body_to_optical" type="fixed">
+    <parent link="camera_body_link"/>
+    <child link="camera_color_optical_frame"/>
+    <origin xyz="0.0125 0 0" rpy="-1.5708 0 -1.5708"/>
+  </joint>
+  <link name="camera_depth_optical_frame"/>
+
+  <joint name="body_to_depth_optical" type="fixed">
+    <parent link="camera_body_link"/>
+    <child link="camera_depth_optical_frame"/>
+    <origin xyz="0.0125 0 0" rpy="-1.5708 0 -1.5708"/>
+  </joint>
+
+</robot>

@@ -1,0 +1,52 @@
+/**:
+  ros__parameters:
+    aruco:
+      dictionary: 0  
+      marker_size: 0.04 
+      cube_ids:
+        small: 1
+        medium: 2
+        large: 3
+
+    bins:
+      A:
+        x: 0.05
+        y: -0.65
+        z: 1.025 
+      B:
+        x: 0.20
+        y: -0.65
+        z: 1.025
+      C:
+        x: 0.35
+        y: -0.65
+        z: 1.025
+
+    cubes:
+      small:
+        size: 0.04
+        color: [1.0, 0.0, 0.0]
+      medium:
+        size: 0.05
+        color: [0.0, 1.0, 0.0]
+      large:
+        size: 0.06
+        color: [0.0, 0.0, 1.0]
+
+    motion:
+      approach_height: 0.10
+      grasp_height: 0.0 
+      lift_height: 0.08 
+      gripper_settle_time: 0.3
+
+    camera:
+      frame_id: "camera_color_optical_frame"
+      topic_rgb: "/camera/color/image_raw"
+      topic_depth: "/camera/depth/depth/image_raw"
+      topic_info: "/camera/color/camera_info"
+
+    hanoi:
+      num_disks: 3
+      source_bin: "A"
+      auxiliary_bin: "B"
+      target_bin: "C"

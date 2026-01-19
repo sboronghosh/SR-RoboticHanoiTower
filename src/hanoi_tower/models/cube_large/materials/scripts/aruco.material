@@ -1,0 +1,15 @@
+material CubeLarge/Aruco
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture aruco_3.png
+        filtering anisotropic
+        max_anisotropy 16
+      }
+    }
+  }
+}

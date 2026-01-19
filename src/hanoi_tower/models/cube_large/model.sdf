@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="cube_large">
+    <link name="cube_link">
+      <inertial>
+        <mass>0.12</mass>
+        <inertia>
+          <ixx>0.000072</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.000072</iyy><iyz>0</iyz><izz>0.000072</izz>
+        </inertia>
+      </inertial>
+      
+      <collision name="collision">
+        <geometry><box><size>0.06 0.06 0.06</size></box></geometry>
+        <surface>
+          <friction><ode><mu>100.0</mu><mu2>100.0</mu2></ode></friction>
+          <contact>
+            <ode>
+              <kp>1000000.0</kp>
+              <kd>1.0</kd>
+              <max_vel>0.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      
+      <visual name="cube_visual">
+        <geometry><box><size>0.06 0.06 0.06</size></box></geometry>
+        <material>
+          <ambient>0.1 0.1 0.8 1</ambient>
+          <diffuse>0.1 0.1 0.9 1</diffuse>
+        </material>
+      </visual>
+      
+      <visual name="aruco_marker">
+        <pose>0 -0.0301 0 -1.5708 0 0</pose>
+        <geometry><box><size>0.05 0.05 0.0002</size></box></geometry>
+        <material>
+          <script>
+            <uri>model://cube_large/materials/scripts</uri>
+            <uri>model://cube_large/materials/textures</uri>
+            <name>CubeLarge/Aruco</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

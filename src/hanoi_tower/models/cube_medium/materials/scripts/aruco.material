@@ -1,0 +1,15 @@
+material CubeMedium/Aruco
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture aruco_2.png
+        filtering anisotropic
+        max_anisotropy 16
+      }
+    }
+  }
+}
